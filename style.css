@@ -58,7 +58,6 @@ body{
 .entnumber{
     height: 3rem;
     font-size: 35px;
-    /* opacity: 0.5; */
     padding:5px;
     text-align: center;
     color: red;
