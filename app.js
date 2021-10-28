@@ -17,6 +17,7 @@ function guessNumber() {
 		if (guess === 0 || guess === '' || guess > 100 || guess < 0) {
 
 			document.querySelector('.result').textContent = 'Invalid number.. Please enter a number between 1 and 100';
+			alert('Invalid number.. Please enter a number between 1 and 100');
 
 			//guess is to high
 		} else if (guess > randomNumber) {
@@ -88,13 +89,11 @@ button.addEventListener('click', () => {
 
 document.querySelector('.guess').addEventListener('click', guessNumber);
 document.querySelector('.newgame').addEventListener('click', newGame);
-// document.addEventListener('keypress', keyBoardEvents);
+document.addEventListener('keypress', keyBoardEvents);
 
 //keyboard exception
-// function keyBoardEvents(e) {
-
-// 	if (e.keyCode === 13) {
-// 		guessNumber();
-// 	}
-
-// }
+function keyBoardEvents(e) {
+	if (e.keyCode === 13) {
+		guessNumber();
+	}
+}
