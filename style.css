@@ -73,6 +73,14 @@ body{
     padding-left:10px;
     text-align: start;
 }
+.entnumber:focus::-webkit-input-placeholder {
+    color: transparent    
+}
+    
+.entnumber:focus::-moz-placeholder {    
+    color: transparent
+}
+
 
 .output1,
 .output2{
