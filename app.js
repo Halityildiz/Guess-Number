@@ -18,6 +18,7 @@ function guessNumber() {
 
 			document.querySelector('.result').textContent = 'Invalid number.. Please enter a number between 1 and 100';
 			alert('Invalid number.. Please enter a number between 1 and 100');
+			
 
 			//guess is to high
 		} else if (guess > randomNumber) {
@@ -26,6 +27,9 @@ function guessNumber() {
 			TriesTaken += 1;
 			document.querySelector('.result').textContent = 'Too high, please lower...';
 			numberOfTries = document.querySelector('.deneme').textContent = 'Tries: ' + Tries;
+			document.querySelector('.entnumber').value = ''
+
+			
 
 			//guess is to low
 		} else if (guess < randomNumber) {
@@ -34,6 +38,8 @@ function guessNumber() {
 			TriesTaken += 1;
 			document.querySelector('.result').textContent = 'Too low, please higher...';
 			numberOfTries = document.querySelector('.deneme').textContent = 'Tries: ' + Tries;
+			document.querySelector('.entnumber').value = ''
+
 
 			//guess is correct
 		} else {
@@ -42,14 +48,18 @@ function guessNumber() {
 			TriesTaken += 1;
 			document.querySelector('.result').textContent = guess + ' is correct, You Win!!! Congrulations!. Your lucky color is on screen...';
 			numberOfTries = document.querySelector('.deneme').textContent = 'You find only ' + TriesTaken + ' tries';
+			document.querySelector('.entnumber').value = ''
+
 			play = gameOver;
 		}
 
 		//out of tries
 		if (Tries === 0 && guess != randomNumber) {
-
+			
 			numberOfTries = numberOfTries = document.querySelector('.deneme').textContent = 'Sorry.. You Lose, the number was ' + randomNumber;
 			document.querySelector('.result').textContent = 'Dont give up!.. Your lucky color is on screen...';
+			document.querySelector('.entnumber').value = ''
+
 			play = gameOver;
 
 		}
@@ -84,16 +94,26 @@ button.addEventListener('click', () => {
   body.style.background = generateRGB();
 });
 
+// document.querySelector('.entnumber').addEventListener('keypress', keyBoardEvents);
 
+// function keyBoardEvents(f) {
+// 	if (f.keyCode === 13) {
+// 		body.style.background = generateRGB();  
+// 		guessNumber();
+// 		document.querySelector('.entnumber').value = ''
+// 	}
+// }
 
 
 document.querySelector('.guess').addEventListener('click', guessNumber);
 document.querySelector('.newgame').addEventListener('click', newGame);
-document.addEventListener('keypress', keyBoardEvents);
+// document.addEventListener('keypress', keyBoardEvents);
+
 
 //keyboard exception
-function keyBoardEvents(e) {
-	if (e.keyCode === 13) {
-		guessNumber();
-	}
-}
+// function keyBoardEvents(e) {
+// 	if (e.keyCode === 13) {
+// 		guessNumber();
+// 	}
+// }
+
